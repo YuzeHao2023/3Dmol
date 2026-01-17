@@ -2,9 +2,9 @@ from rdkit import Chem
 from rdkit.Chem import AllChem
 import py3Dmol
 
-# Define the molecule using SMILES for CH3-O-Zn-O ion.
-# 'CO[Zn+2][O-]' represents CH3-O-Zn-O ion with Zn in +2 oxidation state and one O with -1 charge.
-smiles_string = 'CO[Zn+2][O-]'
+# Define the molecule using SMILES for H-O-Zn-O ion.
+# 'O[Zn+2][O-]' represents H-O-Zn-O ion with Zn in +2 oxidation state and one O with -1 charge.
+smiles_string = 'O[Zn+2][O-]'
 mol = Chem.MolFromSmiles(smiles_string)
 
 # Add hydrogens to the molecule to complete the valency
@@ -23,7 +23,7 @@ view.zoomTo()
 # Save the view to an HTML file
 html_content = view.write_html()
 
-file_name = 'CH3_O_Zn_O_ion.html'
+file_name = 'H_O_Zn_O_ion.html'
 with open(file_name, 'w') as f:
     f.write(html_content)
 
