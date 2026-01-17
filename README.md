@@ -1,4 +1,4 @@
-# 3Dmol - 3D分子结构可视化工具
+# 3Dmol - 3D以及2D分子结构可视化工具
 
 使用 RDKit 和 py3Dmol 库生成和可视化 3D 分子结构的工具。
 
@@ -7,6 +7,46 @@
 本项目提供了一个 Python 脚本，可以自动生成分子的 3D 结构模型，并将其保存为交互式 HTML 文件。当前示例生成 H₂S（硫化氢）分子的 3D 结构。
 
 ## 文件说明
+
+文件结构：
+
+```
+├── README.md
+├── img
+│   ├── 2D
+│   │   ├── (CH3)2S_molecule_2D.png
+│   │   ├── (CH3)2S_molecule_2D.svg
+│   │   ├── 3D-ion_2D.png
+│   │   ├── 3D-ion_2D.svg
+│   │   ├── 3Dmolecule_2D.png
+│   │   ├── 3Dmolecule_2D.svg
+│   │   ├── CH3SH_molecule_2D.png
+│   │   ├── CH3SH_molecule_2D.svg
+│   │   ├── CH3_O_Zn_O_ion_2D.png
+│   │   ├── CH3_O_Zn_O_ion_2D.svg
+│   │   ├── H-O-Zn-O_ion_2D.png
+│   │   ├── H-O-Zn-O_ion_2D.svg
+│   │   ├── H_O_Zn_O_ion_2D.png
+│   │   ├── H_O_Zn_O_ion_2D.svg
+│   │   ├── h2s_molecule_2D.png
+│   │   └── h2s_molecule_2D.svg
+│   └── 3D
+│       ├── (CH3)2S_molecule.html
+│       ├── CH3_O_Zn_O_ion.html
+│       ├── H2S_molecule.html
+│       ├── H_O_Zn_O_ion.html
+│       └── H_O_Zn_O_ion_CH3SH_adsorption.html
+└── src
+    ├── 2D
+    │   ├── 2D-adsorption.py
+    │   ├── 2D-ion.py
+    │   ├── 2D-molecule.py
+    │   └── generate_all_2D.py
+    └── 3D
+        ├── 3D-adsorption.py
+        ├── 3D-ion.py
+        └── 3Dmolecule.py
+```
 
 ### 3Dmolecule.py
 主程序文件，用于生成中性分子的 3D 结构，包含以下功能：
