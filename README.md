@@ -1,3 +1,5 @@
+![](asserts/logo.png)
+
 # 3Dmol - 3D以及2D分子结构可视化工具
 
 使用 RDKit 和 py3Dmol 库生成和可视化 3D 分子结构的工具。
