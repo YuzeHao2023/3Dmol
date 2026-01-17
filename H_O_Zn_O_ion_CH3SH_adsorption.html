@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>H-O-Zn-O ion with CH3SH Adsorption</title>
+    <script src="https://cdn.jsdelivr.net/npm/3dmol@2.5.3/build/3Dmol-min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+        }
+        #viewer {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>H-O-Zn-O Ion with CH3SH Molecule Adsorption</h1>
+    <div id="viewer"></div>
+    
+    <script>
+        // Wait for 3Dmol to load
+        window.addEventListener('load', function() {
+            // Create viewer
+            let viewer = $3Dmol.createViewer(document.getElementById('viewer'), {
+                backgroundColor: 'white'
+            });
+            
+            // Add first molecule (CH3SH adsorbate)
+            let data1 = `\n     RDKit          3D\n\n  6  5  0  0  0  0  0  0  0  0999 V2000\n    3.5080    2.0266   -0.0349 C   0  0  0  0  0  0  0  0  0  0  0  0\n    5.1071    1.2572   -0.3595 S   0  0  0  0  0  0  0  0  0  0  0  0\n    3.3335    2.0804    1.0426 H   0  0  0  0  0  0  0  0  0  0  0  0\n    3.4911    3.0375   -0.4497 H   0  0  0  0  0  0  0  0  0  0  0  0\n    2.7121    1.4374   -0.4969 H   0  0  0  0  0  0  0  0  0  0  0  0\n    5.8481    2.1608    0.2984 H   0  0  0  0  0  0  0  0  0  0  0  0\n  1  2  1  0\n  1  3  1  0\n  1  4  1  0\n  1  5  1  0\n  2  6  1  0\nM  END\n`;
+            viewer.addModel(data1, 'mol');
+            
+            // Add second molecule (H-O-Zn-O ion adsorbent)
+            let data2 = `\n     RDKit          3D\n\n  4  3  0  0  0  0  0  0  0  0999 V2000\n   -1.0451   -0.1959    0.4901 O   0  0  0  0  0  0  0  0  0  0  0  0\n    0.3923    1.1009   -0.0563 Zn  0  0  0  0  0  2  0  0  0  0  0  0\n    2.0796   -0.5498   -0.0241 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.4269   -0.3552   -0.4096 H   0  0  0  0  0  0  0  0  0  0  0  0\n  1  2  1  0\n  2  3  1  0\n  1  4  1  0\nM  CHG  2   2   2   3  -1\nM  END\n`;
+            viewer.addModel(data2, 'mol');
+            
+            // Set style
+            viewer.setStyle({}, {sphere: {radius: 0.3}, stick: {radius: 0.15}});
+            
+            // Zoom to show all
+            viewer.zoomTo();
+            
+            // Render
+            viewer.render();
+        });
+    </script>
+</body>
+</html>
